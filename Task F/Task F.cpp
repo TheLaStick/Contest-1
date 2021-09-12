@@ -2,10 +2,76 @@
 //
 
 #include <iostream>
+using namespace std;
+
+/// <summary>
+/// Константа pi
+/// </summary>
+const double pi = 3.14159265;
+/// <summary>
+/// Левая граница промежутка задачи
+/// </summary>
+const double left = -pi/2;
+/// <summary>
+/// Правая граница промежутка задачи
+/// </summary>
+const double right = pi / 2;
+
+/// <summary>
+/// Возводит число в степень
+/// </summary>
+/// <param name="number">Число, которое нужно возвести в степень</param>
+/// <param name="pow">Степень, в которое нужно возвести число</param>
+/// <returns>Число, возведенное в степень</returns>
+double Powering(double number, int pow) {
+	//Итоговый результат
+	double result = 1;
+
+	while (pow > 0)
+	{
+		if (pow % 2 != 0)
+		{
+			result *= number;
+		}
+		number *= number;
+		pow /= 2;
+	}
+
+	return result;
+}
+
+
+
+/// <summary>
+/// Понижает модуль угла для нужного промежутка
+/// </summary>
+/// <param name="oldAngle">Угол</param>
+/// <param name="left">Левая граница промежутка</param>
+/// <param name="right">Правая граница промежутка</param>
+/// <returns>Угол, лежащий в выбранном промежутке</returns>
+double Angle(double oldAngle, double left, double right) {
+	if (oldAngle < -pi / 2) {
+		return Angle(oldAngle + 2 * pi, left, right);
+	}
+	else if(oldAngle > pi / 2) {
+		return Angle(oldAngle - 2 * pi, left, right);
+	}
+	else {
+		return oldAngle;
+	}
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	double sum = 0, angle, ePres;
+	int n = 0;
+	
+	cin >> angle;
+	cin >> ePres;
+	
+
+	while(Powering(angle, 2*n-1)/
+	
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
