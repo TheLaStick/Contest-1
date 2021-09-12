@@ -21,7 +21,7 @@ int main()
 		numberCount++;
 	}
 	
-	//Вывод с точностью 5 знаков после запятой
+	//Вывод с точностью 5 знаков после запятой.
 	cout.precision(5);
 	cout << sumOfNumbers / numberCount;
 }
